@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Soccer Counter</string>
+    <string name="team_a_name"> team A</string>
+    <string name="team_b_name"> team B</string>
+    <string name="foul">+ Foul</string>
+    <string name="goal">+ Goal</string>
+    <string name="hint_team_a">Add Team A Name</string>
+    <string name="hint_team_b">Add Team B Name</string>
+    <string name="initial_score">0</string>
+
+</resources>

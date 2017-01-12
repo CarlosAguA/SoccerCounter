@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="carlosdeveloper.com.soccercounter.MainActivity">
+
+    <ImageView
+        android:id="@+id/im_view1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/pitch" />
+
+
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/ScrollView01"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" >
+    <!--Parent Linear Layout Horizontal-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:id="@+id/linear_parent">
+
+        <!--Child 1 Linear Layout -->
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/im_view2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ball"
+                android:gravity="center_horizontal"
+                android:layout_margin="10dp"/>
+
+            <TextView
+                android:text="Team A"
+                android:layout_width="match_parent"
+                android:textAllCaps="true"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:textColor="@color/white"
+                android:padding="4dp"
+                android:textSize="20sp"
+                android:id="@+id/tv_teamA"/>
+
+            <TextView android:text="@string/initial_score"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:padding="4dp"
+                android:id="@+id/score_a_tv"
+                android:textSize="50sp"
+                android:textColor="@color/white"
+                android:layout_margin="10dp"/>
+
+            <Button android:text="@string/goal"
+                android:id="@+id/btn_a"
+                android:textAllCaps="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:onClick="addGoalA"
+               android:layout_gravity="center_horizontal"
+                android:textColor="@color/greenLimePrimary"
+                android:background="@drawable/button_oval"/>
+
+            <Button android:text="@string/foul"
+                android:id="@+id/btn_foul_a"
+                android:textAllCaps="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:onClick="addFoulTeamA"
+                android:layout_gravity="center_horizontal"
+                android:textColor="@color/greenLimePrimary"
+                android:background="@color/greenLight"/>
+
+            <EditText
+                android:id="@+id/et2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:hint="@string/hint_team_a"
+                android:textColorHint="@color/greenLight"
+                android:textColor="@color/white" />
+
+        </LinearLayout>
+
+
+        <!--Child 2 Linear Layout -->
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/im_view3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ball"
+            android:gravity="center_horizontal"
+            android:layout_margin="10dp"/>
+
+        <TextView android:text="Team B"
+            android:id="@+id/tv_team_b"
+            android:layout_width="match_parent"
+            android:textAllCaps="true"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:textColor="@color/white"
+            android:padding="4dp"
+            android:textSize="20sp"/>
+
+        <TextView android:text="@string/initial_score"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:padding="4dp"
+            android:id="@+id/score_b_tv"
+            android:textSize="50sp"
+            android:textColor="@color/white"
+            android:layout_margin="10dp"/>
+
+        <Button android:text="@string/goal"
+            android:id="@+id/btn_b"
+            android:textAllCaps="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:onClick="addGoalB"
+            android:layout_gravity="center_horizontal"
+            android:textColor="@color/greenLimePrimary"
+            android:background="@drawable/button_oval"/>
+
+        <Button android:text="@string/foul"
+            android:id="@+id/btn_foul_b"
+            android:textAllCaps="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:onClick="addFoulTeamB"
+            android:layout_gravity="center_horizontal"
+            android:textColor="@color/greenLimePrimary"
+            android:background="@color/greenLight"/>
+
+        <EditText
+            android:id="@+id/et1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:hint="@string/hint_team_b"
+            android:textColorHint="@color/greenLight"
+            android:textColor="@color/white"/>
+
+
+    </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@+id/linear_parent">
+
+    <Button android:text="Start"
+        android:id="@+id/btn_start"
+        android:textAllCaps="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="start"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="10dp"
+        android:textColor="@color/greenLimePrimary"
+        android:background="@drawable/button_oval"
+        />
+
+        <Button android:text="Reset"
+            android:id="@+id/btn_reset"
+            android:textAllCaps="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="reset"
+            android:layout_below="@+id/btn_start"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="10dp"
+            android:textColor="@color/greenLimePrimary"
+            android:background="@drawable/button_oval" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_alignParentBottom="true">
+
+            <LinearLayout
+              android:layout_width="0dp"
+              android:layout_height="wrap_content"
+              android:layout_weight="1"
+              android:orientation="vertical">
+
+               <TextView
+                 android:text="Fouls:"
+                 android:layout_width="match_parent"
+                 android:textAllCaps="true"
+                 android:layout_height="wrap_content"
+                 android:gravity="center_horizontal"
+                 android:textColor="@color/white"
+                 android:textSize="20sp"
+                 android:id="@+id/tv_fouls_a"/>
+
+              </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+                <TextView
+                    android:text="Fouls:"
+                    android:layout_width="match_parent"
+                    android:textAllCaps="true"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    android:gravity="center_horizontal"
+                    android:textSize="20sp"
+                    android:id="@+id/tv_fouls_b"/>
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+
+</RelativeLayout>
